@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Sophia Jodon — Throws (Class of 2028)</title>
   <meta name="description" content="Recruiting page for Sophia Jodon — Shot Put, Discus, Hammer, Weight Throw. PRs, highlights, schedule, coach contact.">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#0b0b0f">
   <link rel="canonical" href="https://sophiajodon.com">
 
   <!-- Social cards -->
@@ -24,31 +24,36 @@
   <link rel="icon" type="image/png" href="/assets/tiger.png">
 
   <style>
-    /* ========== THEME TOKENS ========== */
+    /* ===== THEME TOKENS (Light default) ===== */
     :root{
       --gold:#FFD700;
       --gold-ink:#1e1800;
-      --black:#0a0a0a; /* deep charcoal for smoother rendering */
-      --ink:#101010;
-      --bg:#0c0c0c;
-      --card:#121212;
-      --muted:#a7a7a7;
-      --line:#242424;
+
+      /* Light */
+      --bg:#fafafa;
+      --card:#ffffff;
+      --ink:#121212;
+      --muted:#555;
+      --line:#e6e8ee;
+
       --radius:18px;
       --radius-lg:26px;
-      --shadow-xl:0 30px 80px rgba(0,0,0,.45);
-      --shadow:0 10px 36px rgba(0,0,0,.35);
-      --shadow-sm:0 4px 14px rgba(0,0,0,.25);
-      --max:1220px;
-      --nav-h:74px;
-    }
-    /* Light mode */
-    [data-theme="light"]{
-      --bg:#fafafa; --card:#ffffff; --ink:#111;
-      --muted:#666; --line:#e8e8e8;
       --shadow-xl:0 30px 80px rgba(0,0,0,.12);
       --shadow:0 10px 36px rgba(0,0,0,.08);
       --shadow-sm:0 4px 14px rgba(0,0,0,.06);
+      --max:1220px;
+      --nav-h:74px;
+    }
+    /* Dark overrides */
+    [data-theme="dark"]{
+      --bg:#0b0b0f;
+      --card:#121317;
+      --ink:#f3f5fa;
+      --muted:#b3b8c2;
+      --line:#262a33;
+      --shadow-xl:0 30px 80px rgba(0,0,0,.45);
+      --shadow:0 10px 36px rgba(0,0,0,.35);
+      --shadow-sm:0 4px 14px rgba(0,0,0,.25);
     }
 
     *{box-sizing:border-box}
@@ -62,29 +67,26 @@
     a{color:inherit; text-decoration:none}
     h1,h2,h3,.brand .name{font-family:Oswald, Montserrat, system-ui, sans-serif; letter-spacing:.3px}
 
-    /* ========== UTILS ========== */
     .wrap{max-width:var(--max); margin:auto; padding:0 22px}
     section{scroll-margin-top:calc(var(--nav-h) + 12px)}
 
-    /* ========== NAV ========== */
+    /* ===== NAV ===== */
     .nav{
       position:sticky; top:0; z-index:50; height:var(--nav-h);
-      backdrop-filter: saturate(1.2) blur(10px);
-      background:color-mix(in oklab, var(--card) 70%, transparent);
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:color-mix(in oklab, var(--card) 92%, transparent);
       border-bottom:1px solid var(--line);
     }
     .nav .inner{
       height:100%; display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
     .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:42px; height:42px; border-radius:50%; object-fit:contain; background:#fff; border:2px solid #000}
-    [data-theme="light"] .brand img{border-color:#222}
+    .brand img{width:42px; height:42px; border-radius:50%; object-fit:contain; background:#fff; border:2px solid #111}
+    [data-theme="dark"] .brand img{border-color:#000}
     .brand .name{font-weight:800; font-size:21px}
     .links{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
-    .link{
-      padding:8px 12px; border-radius:12px; border:1px solid transparent; font-weight:700;
-    }
-    .link:hover{border-color:var(--line); background:color-mix(in oklab, var(--card) 80%, transparent)}
+    .link{padding:8px 12px; border-radius:12px; border:1px solid transparent; font-weight:700}
+    .link:hover{border-color:var(--line); background:color-mix(in oklab, var(--card) 85%, transparent)}
     .btn{
       display:inline-block; padding:10px 16px; border:2px solid var(--gold); color:var(--gold-ink);
       border-radius:14px; font-weight:900; background:var(--gold);
@@ -99,50 +101,49 @@
       display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px;
       border:1px solid var(--line); background:transparent; color:var(--ink); font-weight:800; cursor:pointer;
     }
-    .toggle:hover{background:color-mix(in oklab, var(--card) 80%, transparent)}
+    .toggle:hover{background:color-mix(in oklab, var(--card) 85%, transparent)}
     .toggle svg{width:18px; height:18px}
 
-    /* ========== HERO ========== */
-    .hero{
-      position:relative; padding:68px 0 46px;
-      isolation:isolate;
-    }
+    /* ===== HERO ===== */
+    .hero{position:relative; padding:68px 0 46px; isolation:isolate}
     .bg-orb, .bg-stripe{
-      position:absolute; inset:auto; pointer-events:none; z-index:-1; filter:blur(20px);
-      opacity:.55; transform:translateZ(0);
+      position:absolute; inset:auto; pointer-events:none; z-index:-1; filter:blur(20px); opacity:.5; transform:translateZ(0);
       animation:float 18s ease-in-out infinite alternate;
     }
     .bg-orb{
-      width:860px; height:860px; border-radius:50%;
-      background:radial-gradient(closest-side, color-mix(in oklab, var(--gold) 75%, white) 0%, rgba(255,215,0,.25) 55%, transparent 70%);
+      width:820px; height:820px; border-radius:50%;
+      background:radial-gradient(closest-side, color-mix(in oklab, var(--gold) 75%, white) 0%, rgba(255,215,0,.18) 55%, transparent 70%);
       top:-220px; right:-160px;
     }
     .bg-stripe{
-      width:120vw; height:320px; left:-10vw; top:180px;
-      background:linear-gradient(110deg, transparent 0 15%, rgba(255,215,0,.14) 35%, transparent 55% 100%);
+      width:120vw; height:300px; left:-10vw; top:200px;
+      background:linear-gradient(110deg, transparent 0 15%, rgba(255,215,0,.10) 35%, transparent 60% 100%);
       animation-duration:24s;
     }
-    @keyframes float{to{transform:translate3d(0, -10px, 0)}}
+    @keyframes float{to{transform:translate3d(0, -12px, 0)}}
 
-    .hero-grid{
-      display:grid; gap:32px; align-items:center;
-      grid-template-columns:1.1fr .9fr;
-    }
+    .hero-grid{display:grid; gap:32px; align-items:center; grid-template-columns:1.1fr .9fr}
     @media (max-width:980px){ .hero-grid{grid-template-columns:1fr} }
 
     .title-row{display:flex; align-items:center; gap:16px}
-    .crest{width:72px; height:72px; border-radius:50%; background:#fff; border:2px solid #000; object-fit:contain}
-    [data-theme="light"] .crest{border-color:#222}
-    h1{
-      margin:0; font-size:clamp(36px,6vw,68px); line-height:1.02; font-weight:800;
-      background:linear-gradient(180deg, var(--gold) 0 55%, color-mix(in oklab, var(--gold), #ffffff) 100%);
+    .crest{width:72px; height:72px; border-radius:50%; background:#fff; border:2px solid #111; object-fit:contain}
+    [data-theme="dark"] .crest{border-color:#000}
+    h1{margin:0; font-size:clamp(36px,6vw,68px); line-height:1.02; font-weight:800}
+    /* Light: gold gradient headline; Dark: clean white for max readability */
+    :root h1{
+      background:linear-gradient(180deg, var(--gold) 0 55%, #fff 100%);
       -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 1px 0 rgba(0,0,0,.2);
     }
-    .sub{margin:6px 0 0; font-weight:800; color:color-mix(in oklab, var(--ink) 80%, var(--gold) 20%); letter-spacing:.3px}
+    [data-theme="dark"] h1{
+      background:none; color:#ffffff; text-shadow:0 1px 0 rgba(0,0,0,.6);
+    }
+    .sub{margin:6px 0 0; font-weight:800; color:#111}
+    [data-theme="dark"] .sub{color:#e9edf7}
+
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
     .chip{
       padding:8px 12px; border-radius:999px; border:1.5px solid var(--line);
-      background:color-mix(in oklab, var(--card) 86%, transparent); font-weight:800;
+      background:color-mix(in oklab, var(--card) 92%, transparent); font-weight:800; color:var(--ink);
     }
 
     .hero-cta{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
@@ -150,30 +151,22 @@
     .media{
       border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-xl);
       aspect-ratio:16/9; background:linear-gradient(180deg,#1a1a1a, #0e0e0e);
-      display:grid; place-items:center; color:#888; position:relative;
+      display:grid; place-items:center; color:#a6a6a6; position:relative;
     }
+    [data-theme="dark"] .media{background:linear-gradient(180deg,#0f1115,#0a0b0d); color:#b9bfcc}
     .media img{width:100%; height:100%; object-fit:cover; transform:scale(1.02)}
-    .media::after{
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, transparent 70%, rgba(0,0,0,.25));
-    }
+    .media::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 70%, rgba(0,0,0,.25))}
 
-    /* ========== PR STRIP ========== */
-    .strip{
-      margin-top:26px; background:color-mix(in oklab, var(--card) 90%, transparent); border:1px solid var(--line);
-      border-radius:var(--radius); box-shadow:var(--shadow);
-    }
-    .strip .row{
-      display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:16px 18px;
-    }
+    /* ===== PR STRIP ===== */
+    .strip{margin-top:26px; background:color-mix(in oklab, var(--card) 95%, transparent); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .strip .row{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:16px 18px}
     @media (max-width:920px){ .strip .row{grid-template-columns:repeat(2,1fr)} }
-    .pr{
-      padding:14px; border-radius:14px; border:1px dashed var(--line); background:color-mix(in oklab, var(--card) 80%, transparent);
-    }
+    .pr{padding:14px; border-radius:14px; border:1px dashed var(--line); background:color-mix(in oklab, var(--card) 88%, transparent)}
     .pr .label{font-weight:700; color:var(--muted); letter-spacing:.2px}
     .pr .value{font-weight:900; font-size:clamp(20px,3.2vw,30px); margin-top:4px}
+    [data-theme="dark"] .pr .value{color:#ffffff}
 
-    /* ========== SECTIONS ========== */
+    /* ===== SECTIONS ===== */
     .section{margin-top:34px}
     .grid{display:grid; gap:18px}
     .two{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -186,22 +179,15 @@
     }
     .card.reveal{transform:translateY(0); opacity:1}
     h2{margin:0 0 10px; font-size:24px; font-weight:900; color:var(--ink); position:relative}
-    h2::after{
-      content:""; display:block; width:72px; height:4px; margin-top:8px;
-      background:linear-gradient(90deg,var(--gold), transparent);
-      border-radius:999px;
-    }
+    h2::after{content:""; display:block; width:72px; height:4px; margin-top:8px; background:linear-gradient(90deg,var(--gold), transparent); border-radius:999px}
     .muted{color:var(--muted)}
     .list{margin:10px 0 0; padding-left:18px}
-    .media-box{
-      border:1px dashed var(--line); border-radius:14px; aspect-ratio:16/9; display:grid; place-items:center; color:var(--muted);
-      background:color-mix(in oklab, var(--card) 85%, transparent);
-    }
+    .media-box{border:1px dashed var(--line); border-radius:14px; aspect-ratio:16/9; display:grid; place-items:center; color:var(--muted); background:color-mix(in oklab, var(--card) 92%, transparent)}
 
-    /* ========== FOOTER ========== */
+    /* ===== FOOTER ===== */
     footer{margin:42px 0 26px; text-align:center; color:var(--muted)}
 
-    /* Accessibility focus */
+    /* Focus ring */
     :focus-visible{outline:3px solid var(--gold); outline-offset:3px}
   </style>
 </head>
@@ -221,7 +207,7 @@
         <a class="btn" href="#contact">Coach Contact</a>
         <button class="toggle" id="themeToggle" aria-label="Toggle theme">
           <svg id="themeIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm6.36 2.64a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71zM21 11a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2h1zM5.64 5.64a1 1 0 0 1 1.41 0l.71.71A1 1 0 0 1 6.35 7.77l-.71-.71a1 1 0 0 1 0-1.41zM12 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 11a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h1zm13.66 4.59a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71zM6.35 16.24a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0z"/>
+            <path id="iconPath" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.73 0-1.41-1.41M7.05 7.05 5.64 5.64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
           </svg>
           <strong id="themeText">Light</strong>
         </button>
@@ -254,7 +240,6 @@
       </div>
 
       <div class="media">
-        <!-- Replace when ready -->
         <!-- <img src="/assets/hero.jpg" alt="Sophia Jodon in competition"> -->
         <span>Hero Photo Placeholder</span>
       </div>
@@ -326,7 +311,6 @@
       <article class="card">
         <h2>Coach Contact</h2>
         <p>Email: <a href="mailto:info@sophiajodon.com"><strong>info@sophiajodon.com</strong></a></p>
-        <p class="muted">Prefer a one-sheet? Download below.</p>
       </article>
       <article class="card">
         <h2>Download</h2>
@@ -338,48 +322,41 @@
   <footer>© <span id="year"></span> Sophia Jodon</footer>
 
   <script>
-    // ---------- util ----------
+    // Helpers
     const $ = s => document.querySelector(s);
     const $$ = s => document.querySelectorAll(s);
 
-    // Year + updated label
+    // Year + updated
     $("#year").textContent = new Date().getFullYear();
-    $("#updated").textContent = new Date().toLocaleDateString();
+    $("#updated") && ($("#updated").textContent = new Date().toLocaleDateString());
 
-    // Theme init: saved > system
+    // THEME: saved > system
     const root = document.documentElement;
-    const saved = localStorage.getItem("theme"); // "light" | "dark" | null
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    function setTheme(mode){
-      if(mode === "light"){ root.setAttribute("data-theme","light"); }
-      else if(mode === "dark"){ root.setAttribute("data-theme",""); } // default is dark palette; empty = dark
-      else { root.setAttribute("data-theme", prefersDark ? "" : "light"); }
-      // icon text
-      const isLight = root.getAttribute("data-theme")==="light";
-      $("#themeText").textContent = isLight ? "Dark" : "Light";
-      $("#themeIcon").innerHTML = isLight
-        ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
-        : '<path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.73 0-1.41-1.41M7.05 7.05 5.64 5.64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>';
-      // theme-color tint
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? "#ffffff" : "#0a0a0a");
-    }
-    setTheme(saved);
+    const saved = localStorage.getItem("theme");              // "light" | "dark" | null
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    $("#themeToggle").addEventListener("click", ()=>{
-      const isLight = root.getAttribute("data-theme")==="light";
-      const next = isLight ? null : "light"; // toggle between dark(default) and light
-      if(next) localStorage.setItem("theme", next); else localStorage.removeItem("theme");
-      setTheme(next);
+    function applyTheme(mode){
+      const m = mode || (prefersDark ? "dark" : "light");
+      root.setAttribute("data-theme", m);
+      $("#themeText").textContent = m === "dark" ? "Light" : "Dark";
+      const meta = document.querySelector('meta[name="theme-color"]');
+      meta.setAttribute("content", m === "dark" ? "#0b0b0f" : "#ffffff");
+      // Icon
+      const path = m === "dark"
+        ? 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'
+        : 'M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.73 0-1.41-1.41M7.05 7.05 5.64 5.64';
+      $("#iconPath").setAttribute("d", path);
+    }
+    applyTheme(saved);
+
+    $("#themeToggle").addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      applyTheme(next);
     });
 
-    // Update when system theme changes (if no saved pref)
-    if(!saved && window.matchMedia){
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e=>{
-        setTheme(null);
-      });
-    }
-
-    // IntersectionObserver: reveal cards smoothly
+    // Reveal cards
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){ e.target.classList.add("reveal"); io.unobserve(e.target); }
@@ -387,22 +364,20 @@
     }, {threshold:.16});
     $$('.card').forEach(el=>io.observe(el));
 
-    // Animated PR counters
-    const prStrip = $("#prs");
-    let counted = false;
+    // PR counters
+    const prStrip = $("#prs"); let counted = false;
     const cIo = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting && !counted){
           counted = true;
           $$(".count").forEach(el=>{
             const target = +el.dataset.target || 0;
-            const dur = 900; // ms
+            const dur = 900;
             const start = performance.now();
-            const from = 0;
             function tick(t){
               const p = Math.min(1, (t-start)/dur);
-              const eased = (1 - Math.pow(1-p, 3)); // easeOutCubic
-              el.textContent = Math.round(from + (target-from)*eased);
+              const eased = 1 - Math.pow(1-p, 3);
+              el.textContent = Math.round(target * eased);
               if(p<1) requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
