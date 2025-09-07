@@ -4,145 +4,212 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Sophia Jodon — Throws (Class of 2028)</title>
-  <meta name="description" content="Official recruiting page for Sophia Jodon — Shot Put, Discus, Hammer, and Weight Throw (Class of 2028). PRs, highlights, schedule, and coach contact.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Recruiting page for Sophia Jodon — Shot Put, Discus, Hammer, Weight Throw. PRs, highlights, schedule, coach contact.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://sophiajodon.com">
+
+  <!-- Social cards -->
+  <meta property="og:title" content="Sophia Jodon — Throws">
+  <meta property="og:description" content="Shot Put • Discus • Hammer • Weight Throw — Class of 2028">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sophiajodon.com/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon (drop a 400x400 transparent PNG at /assets/tiger.png) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/tiger.png">
 
   <style>
+    /* ========== THEME TOKENS ========== */
     :root{
-      /* Light theme */
-      --black:#000000;
       --gold:#FFD700;
-
-      --bg:#fafafa;
-      --card:#ffffff;
-      --ink:#111111;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --shadow-sm:0 2px 10px rgba(0,0,0,.06);
-      --max:1120px;
-    }
-
-    /* Dark theme overrides */
-    [data-theme="dark"]{
-      --bg:#0b0b0b;
+      --gold-ink:#1e1800;
+      --black:#0a0a0a; /* deep charcoal for smoother rendering */
+      --ink:#101010;
+      --bg:#0c0c0c;
       --card:#121212;
-      --ink:#f5f5f5;
-      --muted:#a3a3a3;
-      --line:#2a2a2a;
-      --shadow:0 10px 30px rgba(0,0,0,.5);
-      --shadow-sm:0 2px 10px rgba(0,0,0,.4);
+      --muted:#a7a7a7;
+      --line:#242424;
+      --radius:18px;
+      --radius-lg:26px;
+      --shadow-xl:0 30px 80px rgba(0,0,0,.45);
+      --shadow:0 10px 36px rgba(0,0,0,.35);
+      --shadow-sm:0 4px 14px rgba(0,0,0,.25);
+      --max:1220px;
+      --nav-h:74px;
+    }
+    /* Light mode */
+    [data-theme="light"]{
+      --bg:#fafafa; --card:#ffffff; --ink:#111;
+      --muted:#666; --line:#e8e8e8;
+      --shadow-xl:0 30px 80px rgba(0,0,0,.12);
+      --shadow:0 10px 36px rgba(0,0,0,.08);
+      --shadow-sm:0 4px 14px rgba(0,0,0,.06);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0; color:var(--ink); background:var(--bg);
-      font:16px/1.6 Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      margin:0; background:var(--bg); color:var(--ink);
+      font:16px/1.65 Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
+    img{max-width:100%; display:block}
     a{color:inherit; text-decoration:none}
-    img{max-width:100%; height:auto; display:block}
-    h1,h2,.brand .name{font-family:Oswald, Montserrat, system-ui, sans-serif}
+    h1,h2,h3,.brand .name{font-family:Oswald, Montserrat, system-ui, sans-serif; letter-spacing:.3px}
 
-    /* Header / Nav */
+    /* ========== UTILS ========== */
+    .wrap{max-width:var(--max); margin:auto; padding:0 22px}
+    section{scroll-margin-top:calc(var(--nav-h) + 12px)}
+
+    /* ========== NAV ========== */
     .nav{
-      position:sticky; top:0; z-index:50; background:var(--card); border-bottom:1px solid var(--line);
-      box-shadow:var(--shadow-sm);
+      position:sticky; top:0; z-index:50; height:var(--nav-h);
+      backdrop-filter: saturate(1.2) blur(10px);
+      background:color-mix(in oklab, var(--card) 70%, transparent);
+      border-bottom:1px solid var(--line);
     }
-    .nav .inner{max-width:var(--max); margin:auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .nav .inner{
+      height:100%; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
     .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:40px; height:40px; object-fit:contain; border-radius:50%; background:#fff; border:2px solid var(--black)}
-    [data-theme="dark"] .brand img{background:#fff} /* keep logo bright in dark mode */
-    .brand .name{letter-spacing:.5px; font-weight:700; font-size:20px}
-    .nav .links{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-    .nav a.link{padding:8px 10px; border-radius:10px}
-    .nav a.link:hover{background:var(--line)}
+    .brand img{width:42px; height:42px; border-radius:50%; object-fit:contain; background:#fff; border:2px solid #000}
+    [data-theme="light"] .brand img{border-color:#222}
+    .brand .name{font-weight:800; font-size:21px}
+    .links{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+    .link{
+      padding:8px 12px; border-radius:12px; border:1px solid transparent; font-weight:700;
+    }
+    .link:hover{border-color:var(--line); background:color-mix(in oklab, var(--card) 80%, transparent)}
     .btn{
-      display:inline-block; padding:10px 14px; border:2px solid var(--black);
-      border-radius:12px; font-weight:800; transition:transform .05s ease, background .15s ease, color .15s ease, border-color .15s ease;
-      background:transparent; color:var(--ink);
+      display:inline-block; padding:10px 16px; border:2px solid var(--gold); color:var(--gold-ink);
+      border-radius:14px; font-weight:900; background:var(--gold);
+      box-shadow:0 6px 16px rgba(255,215,0,.25);
+      transition:transform .08s ease, filter .2s ease, box-shadow .2s ease;
     }
-    .btn:hover{background:var(--gold); color:#000; border-color:#000}
-    .btn:active{transform:translateY(1px)}
-    .btn.ghost{border-color:#d1d5db}
-    [data-theme="dark"] .btn.ghost{border-color:#3a3a3a}
+    .btn:hover{transform:translateY(-1px); filter:saturate(1.05); box-shadow:0 10px 22px rgba(255,215,0,.33)}
+    .btn.ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+    .btn.ghost:hover{border-color:var(--gold); color:var(--gold-ink); background:var(--gold)}
 
-    .theme-toggle{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer;
-      font-weight:700;
+    .toggle{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px;
+      border:1px solid var(--line); background:transparent; color:var(--ink); font-weight:800; cursor:pointer;
     }
-    .theme-toggle:hover{background:var(--line)}
-    .theme-toggle .icon{font-size:18px; line-height:0}
+    .toggle:hover{background:color-mix(in oklab, var(--card) 80%, transparent)}
+    .toggle svg{width:18px; height:18px}
 
-    /* Wrapper */
-    .wrap{max-width:var(--max); margin:auto; padding:22px}
-
-    /* Hero */
+    /* ========== HERO ========== */
     .hero{
-      margin-top:18px; border-radius:var(--radius);
-      background:
-        linear-gradient(120deg, rgba(255,215,0,.16), rgba(255,255,255,0) 65%),
-        var(--card);
-      display:grid; gap:28px; align-items:center; padding:36px 24px; box-shadow:var(--shadow-sm); border:1px solid var(--line);
+      position:relative; padding:68px 0 46px;
+      isolation:isolate;
     }
-    @media (min-width:960px){ .hero{grid-template-columns:1.2fr .9fr} }
-    .title{display:flex; align-items:center; gap:16px}
-    .title img{width:64px; height:64px; object-fit:contain; border-radius:50%; background:#fff; border:2px solid var(--black)}
-    h1{margin:0; font-size:clamp(30px,5vw,52px); line-height:1.05}
-    .sub{margin:6px 0 0 0; font-weight:700; color:#000}
-    [data-theme="dark"] .sub{color:var(--ink)}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{
-      border:1.5px solid var(--line); border-radius:999px; padding:6px 10px; background:var(--card); font-weight:700;
+    .bg-orb, .bg-stripe{
+      position:absolute; inset:auto; pointer-events:none; z-index:-1; filter:blur(20px);
+      opacity:.55; transform:translateZ(0);
+      animation:float 18s ease-in-out infinite alternate;
     }
-    .hero .actions{display:flex; gap:12px; margin-top:14px}
-    .hero-media{
-      border-radius:14px; overflow:hidden; background:#eee; border:1px solid var(--line);
-      aspect-ratio:16/9; display:grid; place-items:center; color:#666;
+    .bg-orb{
+      width:860px; height:860px; border-radius:50%;
+      background:radial-gradient(closest-side, color-mix(in oklab, var(--gold) 75%, white) 0%, rgba(255,215,0,.25) 55%, transparent 70%);
+      top:-220px; right:-160px;
     }
-    [data-theme="dark"] .hero-media{background:#1a1a1a; color:#a1a1a1}
+    .bg-stripe{
+      width:120vw; height:320px; left:-10vw; top:180px;
+      background:linear-gradient(110deg, transparent 0 15%, rgba(255,215,0,.14) 35%, transparent 55% 100%);
+      animation-duration:24s;
+    }
+    @keyframes float{to{transform:translate3d(0, -10px, 0)}}
 
-    /* Sections */
-    section{margin-top:28px}
+    .hero-grid{
+      display:grid; gap:32px; align-items:center;
+      grid-template-columns:1.1fr .9fr;
+    }
+    @media (max-width:980px){ .hero-grid{grid-template-columns:1fr} }
+
+    .title-row{display:flex; align-items:center; gap:16px}
+    .crest{width:72px; height:72px; border-radius:50%; background:#fff; border:2px solid #000; object-fit:contain}
+    [data-theme="light"] .crest{border-color:#222}
+    h1{
+      margin:0; font-size:clamp(36px,6vw,68px); line-height:1.02; font-weight:800;
+      background:linear-gradient(180deg, var(--gold) 0 55%, color-mix(in oklab, var(--gold), #ffffff) 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 1px 0 rgba(0,0,0,.2);
+    }
+    .sub{margin:6px 0 0; font-weight:800; color:color-mix(in oklab, var(--ink) 80%, var(--gold) 20%); letter-spacing:.3px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{
+      padding:8px 12px; border-radius:999px; border:1.5px solid var(--line);
+      background:color-mix(in oklab, var(--card) 86%, transparent); font-weight:800;
+    }
+
+    .hero-cta{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
+
+    .media{
+      border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-xl);
+      aspect-ratio:16/9; background:linear-gradient(180deg,#1a1a1a, #0e0e0e);
+      display:grid; place-items:center; color:#888; position:relative;
+    }
+    .media img{width:100%; height:100%; object-fit:cover; transform:scale(1.02)}
+    .media::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, transparent 70%, rgba(0,0,0,.25));
+    }
+
+    /* ========== PR STRIP ========== */
+    .strip{
+      margin-top:26px; background:color-mix(in oklab, var(--card) 90%, transparent); border:1px solid var(--line);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+    }
+    .strip .row{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:16px 18px;
+    }
+    @media (max-width:920px){ .strip .row{grid-template-columns:repeat(2,1fr)} }
+    .pr{
+      padding:14px; border-radius:14px; border:1px dashed var(--line); background:color-mix(in oklab, var(--card) 80%, transparent);
+    }
+    .pr .label{font-weight:700; color:var(--muted); letter-spacing:.2px}
+    .pr .value{font-weight:900; font-size:clamp(20px,3.2vw,30px); margin-top:4px}
+
+    /* ========== SECTIONS ========== */
+    .section{margin-top:34px}
     .grid{display:grid; gap:18px}
-    .two{grid-template-columns:repeat(auto-fit, minmax(290px, 1fr))}
-    .cards{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr))}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:980px){ .two,.three{grid-template-columns:1fr} }
     .card{
       background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-      padding:18px; box-shadow:var(--shadow);
+      box-shadow:var(--shadow); padding:20px;
+      transform:translateY(10px); opacity:0; transition:transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s ease;
     }
-    h2{margin:0 0 10px; font-size:22px; color:var(--ink); font-weight:800}
-    .list{margin:8px 0 0; padding-left:18px}
-    .statrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-    .stat{
-      background:transparent; border:2px solid var(--black); color:var(--ink); border-radius:12px; padding:8px 12px; font-weight:900;
+    .card.reveal{transform:translateY(0); opacity:1}
+    h2{margin:0 0 10px; font-size:24px; font-weight:900; color:var(--ink); position:relative}
+    h2::after{
+      content:""; display:block; width:72px; height:4px; margin-top:8px;
+      background:linear-gradient(90deg,var(--gold), transparent);
+      border-radius:999px;
     }
-    [data-theme="dark"] .stat{border-color:var(--gold); color:var(--ink)}
     .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding-left:18px}
+    .media-box{
+      border:1px dashed var(--line); border-radius:14px; aspect-ratio:16/9; display:grid; place-items:center; color:var(--muted);
+      background:color-mix(in oklab, var(--card) 85%, transparent);
+    }
 
-    /* Footer */
-    footer{margin:36px 0 10px; text-align:center; color:var(--muted)}
+    /* ========== FOOTER ========== */
+    footer{margin:42px 0 26px; text-align:center; color:var(--muted)}
 
-    /* Focus (keyboard accessibility) */
-    :focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+    /* Accessibility focus */
+    :focus-visible{outline:3px solid var(--gold); outline-offset:3px}
   </style>
 </head>
 <body>
 
-  <!-- Sticky Nav -->
-  <nav class="nav" role="navigation" aria-label="Primary">
-    <div class="inner">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap inner">
       <a class="brand" href="#">
         <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
         <span class="name">Sophia Jodon</span>
@@ -152,160 +219,199 @@
         <a class="link" href="#highlights">Highlights</a>
         <a class="link" href="#about">About</a>
         <a class="btn" href="#contact">Coach Contact</a>
-        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">
-          <span class="icon" id="themeIcon">🌙</span>
-          <span id="themeText">Dark</span>
+        <button class="toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm6.36 2.64a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71zM21 11a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2h1zM5.64 5.64a1 1 0 0 1 1.41 0l.71.71A1 1 0 0 1 6.35 7.77l-.71-.71a1 1 0 0 1 0-1.41zM12 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM4 11a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h1zm13.66 4.59a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71zM6.35 16.24a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0z"/>
+          </svg>
+          <strong id="themeText">Light</strong>
         </button>
       </div>
     </div>
   </nav>
 
-  <div class="wrap">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="bg-orb" aria-hidden="true"></div>
+    <div class="bg-stripe" aria-hidden="true"></div>
 
-    <!-- Hero -->
-    <header class="hero">
+    <div class="wrap hero-grid">
       <div>
-        <div class="title">
-          <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
+        <div class="title-row">
+          <img class="crest" src="/assets/tiger.png" alt="Cuyahoga Falls Tiger">
           <h1>Sophia Jodon</h1>
         </div>
         <p class="sub">Class of 2028 • Cuyahoga Falls HS</p>
-        <div class="tags" aria-label="Events">
+        <div class="chips" aria-label="Events">
           <span class="chip">Shot Put</span>
           <span class="chip">Discus</span>
           <span class="chip">Hammer Throw</span>
           <span class="chip">Weight Throw</span>
         </div>
-        <div class="actions">
+        <div class="hero-cta">
           <a class="btn" href="#highlights">View Highlights</a>
           <a class="btn ghost" href="#schedule">Season Schedule</a>
         </div>
       </div>
-      <div class="hero-media">
-        <!-- Replace with /assets/hero.jpg when ready -->
+
+      <div class="media">
+        <!-- Replace when ready -->
         <!-- <img src="/assets/hero.jpg" alt="Sophia Jodon in competition"> -->
         <span>Hero Photo Placeholder</span>
       </div>
-    </header>
+    </div>
 
-    <!-- PRs + Academics -->
-    <section id="prs" class="grid two">
-      <div class="card">
-        <h2>Personal Records (PRs)</h2>
-        <div class="statrow">
-          <span class="stat">Shot Put: 33 ft</span>
-          <span class="stat">Discus: 87 ft</span>
+    <!-- PR STRIP -->
+    <div class="wrap strip" id="prs">
+      <div class="row">
+        <div class="pr">
+          <div class="label">Shot Put</div>
+          <div class="value"><span class="count" data-target="33">0</span> ft</div>
         </div>
-        <ul class="list">
-          <li>Hammer Throw: <strong>—</strong></li>
-          <li>Weight Throw: <strong>—</strong></li>
-        </ul>
-        <p class="muted">Last updated: <span id="updated"></span></p>
+        <div class="pr">
+          <div class="label">Discus</div>
+          <div class="value"><span class="count" data-target="87">0</span> ft</div>
+        </div>
+        <div class="pr">
+          <div class="label">Hammer Throw</div>
+          <div class="value"><span class="count" data-target="0">0</span> ft</div>
+        </div>
+        <div class="pr">
+          <div class="label">Weight Throw</div>
+          <div class="value"><span class="count" data-target="0">0</span> ft</div>
+        </div>
       </div>
-      <div class="card">
-        <h2>Academics</h2>
-        <ul class="list">
-          <li>National Honor Society</li>
-          <li>Intended Major: Education</li>
-        </ul>
-      </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Highlights / Training / Schedule -->
-    <section id="highlights" class="grid cards">
-      <div class="card">
+  <!-- CONTENT -->
+  <main class="wrap">
+    <section class="section grid three" id="highlights">
+      <article class="card">
         <h2>Meet Highlights</h2>
-        <p>Link videos or meet sheets (YouTube/Hudl/Google Drive).</p>
-        <div class="hero-media" style="aspect-ratio:16/9;">Video/Thumb Placeholder</div>
-      </div>
-      <div class="card">
+        <p class="muted">Link YouTube/Hudl/Drive videos. Add your best throws, distances, and competitive context.</p>
+        <div class="media-box">Video/Thumbnail Placeholder</div>
+      </article>
+      <article class="card">
         <h2>Training</h2>
-        <p>Kettlebell/strength, throwing drills, and progress notes.</p>
-        <div class="hero-media" style="aspect-ratio:16/9;">Gym/Drill Photo</div>
-      </div>
-      <div class="card" id="schedule">
+        <p class="muted">Strength, throws drills, offseason notes. Brief bullets help coaches skim.</p>
+        <div class="media-box">Gym/Drill Photo</div>
+      </article>
+      <article class="card" id="schedule">
         <h2>Schedule</h2>
         <ul class="list">
-          <li>Fall conditioning —</li>
-          <li>Indoor meets —</li>
-          <li>Outdoor season —</li>
+          <li>Fall conditioning — Cuyahoga Falls HS</li>
+          <li>Indoor season — TBD</li>
+          <li>Outdoor meets — TBD</li>
         </ul>
-      </div>
+      </article>
     </section>
 
-    <!-- About / References -->
-    <section id="about" class="grid two">
-      <div class="card">
+    <section class="section grid two" id="about">
+      <article class="card">
         <h2>About Sophia</h2>
-        <p>Multi-event thrower focused on Shot Put, Discus, Hammer, and Weight Throw. Add a short bio, goals, awards, and team role here.</p>
-      </div>
-      <div class="card">
+        <p>Multi-event thrower focused on Shot Put, Discus, Hammer, and Weight Throw. Add a concise bio: goals, awards, work ethic, leadership roles.</p>
+        <p class="muted">National Honor Society • Intended Major: Education</p>
+        <p class="muted">Last updated: <span id="updated"></span></p>
+      </article>
+      <article class="card">
         <h2>Coach References</h2>
         <ul class="list">
-          <li>Head Coach: — (email / phone)</li>
-          <li>Throws Coach: — (email / phone)</li>
+          <li>Head Coach — <em>email / phone</em></li>
+          <li>Throws Coach — <em>email / phone</em></li>
         </ul>
-      </div>
+      </article>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="grid two">
-      <div class="card">
+    <section class="section grid two" id="contact">
+      <article class="card">
         <h2>Coach Contact</h2>
-        <p>Email: <a href="mailto:info@sophiajodon.com">info@sophiajodon.com</a></p>
-      </div>
-      <div class="card">
+        <p>Email: <a href="mailto:info@sophiajodon.com"><strong>info@sophiajodon.com</strong></a></p>
+        <p class="muted">Prefer a one-sheet? Download below.</p>
+      </article>
+      <article class="card">
         <h2>Download</h2>
-        <p><a href="#">Athlete one-sheet (PDF)</a> (optional)</p>
-      </div>
+        <p><a class="btn" href="#">Athlete One-Sheet (PDF)</a></p>
+      </article>
     </section>
+  </main>
 
-    <footer>© <span id="y"></span> Sophia Jodon</footer>
-  </div>
+  <footer>© <span id="year"></span> Sophia Jodon</footer>
 
   <script>
-    // Year + Updated date
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+    // ---------- util ----------
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
 
-    // Theme init: localStorage > prefers-color-scheme
+    // Year + updated label
+    $("#year").textContent = new Date().getFullYear();
+    $("#updated").textContent = new Date().toLocaleDateString();
+
+    // Theme init: saved > system
     const root = document.documentElement;
-    const saved = localStorage.getItem('theme'); // "light" | "dark" | null
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    function applyTheme(mode){
-      if(mode === 'dark'){ root.setAttribute('data-theme','dark'); }
-      else if(mode === 'light'){ root.setAttribute('data-theme',''); }
-      else{
-        // fallback to system
-        if(prefersDark){ root.setAttribute('data-theme','dark'); }
-        else{ root.setAttribute('data-theme',''); }
-      }
-      // update toggle label/icon
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
-      document.getElementById('themeText').textContent = isDark ? 'Light' : 'Dark';
-      // theme-color meta for address bar tint (light/dark)
-      const meta = document.querySelector('meta[name="theme-color"]');
-      meta.setAttribute('content', isDark ? '#0b0b0b' : '#ffffff');
+    const saved = localStorage.getItem("theme"); // "light" | "dark" | null
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    function setTheme(mode){
+      if(mode === "light"){ root.setAttribute("data-theme","light"); }
+      else if(mode === "dark"){ root.setAttribute("data-theme",""); } // default is dark palette; empty = dark
+      else { root.setAttribute("data-theme", prefersDark ? "" : "light"); }
+      // icon text
+      const isLight = root.getAttribute("data-theme")==="light";
+      $("#themeText").textContent = isLight ? "Dark" : "Light";
+      $("#themeIcon").innerHTML = isLight
+        ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+        : '<path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.05 16.95l-1.41 1.41m12.73 0-1.41-1.41M7.05 7.05 5.64 5.64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>';
+      // theme-color tint
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? "#ffffff" : "#0a0a0a");
     }
+    setTheme(saved);
 
-    applyTheme(saved);
-
-    // Toggle handler
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      const next = isDark ? 'light' : 'dark';
-      localStorage.setItem('theme', next);
-      applyTheme(next);
+    $("#themeToggle").addEventListener("click", ()=>{
+      const isLight = root.getAttribute("data-theme")==="light";
+      const next = isLight ? null : "light"; // toggle between dark(default) and light
+      if(next) localStorage.setItem("theme", next); else localStorage.removeItem("theme");
+      setTheme(next);
     });
 
-    // Update if system theme changes and user hasn't chosen
+    // Update when system theme changes (if no saved pref)
     if(!saved && window.matchMedia){
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e=>{
-        applyTheme(e.matches ? 'dark' : 'light');
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e=>{
+        setTheme(null);
       });
     }
+
+    // IntersectionObserver: reveal cards smoothly
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add("reveal"); io.unobserve(e.target); }
+      });
+    }, {threshold:.16});
+    $$('.card').forEach(el=>io.observe(el));
+
+    // Animated PR counters
+    const prStrip = $("#prs");
+    let counted = false;
+    const cIo = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting && !counted){
+          counted = true;
+          $$(".count").forEach(el=>{
+            const target = +el.dataset.target || 0;
+            const dur = 900; // ms
+            const start = performance.now();
+            const from = 0;
+            function tick(t){
+              const p = Math.min(1, (t-start)/dur);
+              const eased = (1 - Math.pow(1-p, 3)); // easeOutCubic
+              el.textContent = Math.round(from + (target-from)*eased);
+              if(p<1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+          });
+          cIo.unobserve(prStrip);
+        }
+      });
+    }, {threshold:.4});
+    cIo.observe(prStrip);
   </script>
 </body>
 </html>
