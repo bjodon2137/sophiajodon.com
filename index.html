@@ -92,4 +92,220 @@
     .hero{
       margin-top:18px; border-radius:var(--radius);
       background:
-        linear-gradient(120deg, rgba(
+        linear-gradient(120deg, rgba(255,215,0,.16), rgba(255,255,255,0) 65%),
+        var(--card);
+      display:grid; gap:28px; align-items:center; padding:36px 24px; box-shadow:var(--shadow-sm); border:1px solid var(--line);
+    }
+    @media (min-width:960px){ .hero{grid-template-columns:1.2fr .9fr} }
+    .title{display:flex; align-items:center; gap:16px}
+    .title img{width:64px; height:64px; object-fit:contain; border-radius:50%; background:#fff; border:2px solid var(--black)}
+    h1{margin:0; font-size:clamp(30px,5vw,52px); line-height:1.05}
+    .sub{margin:6px 0 0 0; font-weight:700; color:#000}
+    [data-theme="dark"] .sub{color:var(--ink)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .chip{
+      border:1.5px solid var(--line); border-radius:999px; padding:6px 10px; background:var(--card); font-weight:700;
+    }
+    .hero .actions{display:flex; gap:12px; margin-top:14px}
+    .hero-media{
+      border-radius:14px; overflow:hidden; background:#eee; border:1px solid var(--line);
+      aspect-ratio:16/9; display:grid; place-items:center; color:#666;
+    }
+    [data-theme="dark"] .hero-media{background:#1a1a1a; color:#a1a1a1}
+
+    /* Sections */
+    section{margin-top:28px}
+    .grid{display:grid; gap:18px}
+    .two{grid-template-columns:repeat(auto-fit, minmax(290px, 1fr))}
+    .cards{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr))}
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:18px; box-shadow:var(--shadow);
+    }
+    h2{margin:0 0 10px; font-size:22px; color:var(--ink); font-weight:800}
+    .list{margin:8px 0 0; padding-left:18px}
+    .statrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .stat{
+      background:transparent; border:2px solid var(--black); color:var(--ink); border-radius:12px; padding:8px 12px; font-weight:900;
+    }
+    [data-theme="dark"] .stat{border-color:var(--gold); color:var(--ink)}
+    .muted{color:var(--muted)}
+
+    /* Footer */
+    footer{margin:36px 0 10px; text-align:center; color:var(--muted)}
+
+    /* Focus (keyboard accessibility) */
+    :focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Nav -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="inner">
+      <a class="brand" href="#">
+        <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
+        <span class="name">Sophia Jodon</span>
+      </a>
+      <div class="links">
+        <a class="link" href="#prs">PRs</a>
+        <a class="link" href="#highlights">Highlights</a>
+        <a class="link" href="#about">About</a>
+        <a class="btn" href="#contact">Coach Contact</a>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon" id="themeIcon">🌙</span>
+          <span id="themeText">Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div>
+        <div class="title">
+          <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
+          <h1>Sophia Jodon</h1>
+        </div>
+        <p class="sub">Class of 2028 • Cuyahoga Falls HS</p>
+        <div class="tags" aria-label="Events">
+          <span class="chip">Shot Put</span>
+          <span class="chip">Discus</span>
+          <span class="chip">Hammer Throw</span>
+          <span class="chip">Weight Throw</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="#highlights">View Highlights</a>
+          <a class="btn ghost" href="#schedule">Season Schedule</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <!-- Replace with /assets/hero.jpg when ready -->
+        <!-- <img src="/assets/hero.jpg" alt="Sophia Jodon in competition"> -->
+        <span>Hero Photo Placeholder</span>
+      </div>
+    </header>
+
+    <!-- PRs + Academics -->
+    <section id="prs" class="grid two">
+      <div class="card">
+        <h2>Personal Records (PRs)</h2>
+        <div class="statrow">
+          <span class="stat">Shot Put: 33 ft</span>
+          <span class="stat">Discus: 87 ft</span>
+        </div>
+        <ul class="list">
+          <li>Hammer Throw: <strong>—</strong></li>
+          <li>Weight Throw: <strong>—</strong></li>
+        </ul>
+        <p class="muted">Last updated: <span id="updated"></span></p>
+      </div>
+      <div class="card">
+        <h2>Academics</h2>
+        <ul class="list">
+          <li>National Honor Society</li>
+          <li>Intended Major: Education</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Highlights / Training / Schedule -->
+    <section id="highlights" class="grid cards">
+      <div class="card">
+        <h2>Meet Highlights</h2>
+        <p>Link videos or meet sheets (YouTube/Hudl/Google Drive).</p>
+        <div class="hero-media" style="aspect-ratio:16/9;">Video/Thumb Placeholder</div>
+      </div>
+      <div class="card">
+        <h2>Training</h2>
+        <p>Kettlebell/strength, throwing drills, and progress notes.</p>
+        <div class="hero-media" style="aspect-ratio:16/9;">Gym/Drill Photo</div>
+      </div>
+      <div class="card" id="schedule">
+        <h2>Schedule</h2>
+        <ul class="list">
+          <li>Fall conditioning —</li>
+          <li>Indoor meets —</li>
+          <li>Outdoor season —</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About / References -->
+    <section id="about" class="grid two">
+      <div class="card">
+        <h2>About Sophia</h2>
+        <p>Multi-event thrower focused on Shot Put, Discus, Hammer, and Weight Throw. Add a short bio, goals, awards, and team role here.</p>
+      </div>
+      <div class="card">
+        <h2>Coach References</h2>
+        <ul class="list">
+          <li>Head Coach: — (email / phone)</li>
+          <li>Throws Coach: — (email / phone)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="grid two">
+      <div class="card">
+        <h2>Coach Contact</h2>
+        <p>Email: <a href="mailto:info@sophiajodon.com">info@sophiajodon.com</a></p>
+      </div>
+      <div class="card">
+        <h2>Download</h2>
+        <p><a href="#">Athlete one-sheet (PDF)</a> (optional)</p>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Sophia Jodon</footer>
+  </div>
+
+  <script>
+    // Year + Updated date
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+
+    // Theme init: localStorage > prefers-color-scheme
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme'); // "light" | "dark" | null
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(mode){
+      if(mode === 'dark'){ root.setAttribute('data-theme','dark'); }
+      else if(mode === 'light'){ root.setAttribute('data-theme',''); }
+      else{
+        // fallback to system
+        if(prefersDark){ root.setAttribute('data-theme','dark'); }
+        else{ root.setAttribute('data-theme',''); }
+      }
+      // update toggle label/icon
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
+      document.getElementById('themeText').textContent = isDark ? 'Light' : 'Dark';
+      // theme-color meta for address bar tint (light/dark)
+      const meta = document.querySelector('meta[name="theme-color"]');
+      meta.setAttribute('content', isDark ? '#0b0b0b' : '#ffffff');
+    }
+
+    applyTheme(saved);
+
+    // Toggle handler
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
+
+    // Update if system theme changes and user hasn't chosen
+    if(!saved && window.matchMedia){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e=>{
+        applyTheme(e.matches ? 'dark' : 'light');
+      });
+    }
+  </script>
+</body>
+</html>
