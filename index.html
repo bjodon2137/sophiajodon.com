@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sophia Jodon — Throws</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
+    header { padding: 64px 24px; text-align: center; }
+    h1 { margin: 0 0 8px; font-size: 2.2rem; }
+    p.tag { margin: 0 0 24px; font-size: 1.1rem; opacity: 0.8; }
+    .cta { display: inline-block; padding: 12px 18px; border: 1px solid #000; text-decoration: none; }
+    section { padding: 32px 20px; max-width: 900px; margin: 0 auto; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; }
+    footer { padding: 28px 20px; text-align: center; font-size: .9rem; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sophia Jodon</h1>
+    <p class="tag">Class of 2028 • Shot Put • Discus</p>
+    <a class="cta" href="#contact">Contact / Coach Info</a>
+  </header>
+
+  <section aria-labelledby="about">
+    <h2 id="about">About</h2>
+    <p>Multi-event thrower focused on Shot Put and Discus. Academic and athletic details coming soon.</p>
+  </section>
+
+  <section aria-labelledby="highlights">
+    <h2 id="highlights">Highlights</h2>
+    <div class="grid">
+      <div class="card">PRs, meet results, video links—coming soon.</div>
+      <div class="card">Training notes & upcoming schedule—coming soon.</div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+    <p>Email: <a href="mailto:info@sophiajodon.com">info@sophiajodon.com</a></p>
+  </section>
+
+  <footer>© <span id="y"></span> Sophia Jodon</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
