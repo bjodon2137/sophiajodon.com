@@ -1,33 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Sophia Jodon — Throws (Class of 2028)</title>
   <meta name="description" content="Official recruiting page for Sophia Jodon — Shot Put, Discus, Hammer, and Weight Throw (Class of 2028). PRs, highlights, schedule, and coach contact.">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Favicon (drop a 400x400 transparent PNG at /assets/tiger.png) -->
   <link rel="icon" type="image/png" href="/assets/tiger.png">
 
   <style>
     :root{
+      /* Light theme */
       --black:#000000;
       --gold:#FFD700;
+
+      --bg:#fafafa;
+      --card:#ffffff;
       --ink:#111111;
       --muted:#6b7280;
       --line:#e5e7eb;
-      --card:#ffffff;
-      --bg:#fafafa;
+
       --radius:16px;
       --shadow:0 10px 30px rgba(0,0,0,.08);
       --shadow-sm:0 2px 10px rgba(0,0,0,.06);
       --max:1120px;
     }
+
+    /* Dark theme overrides */
+    [data-theme="dark"]{
+      --bg:#0b0b0b;
+      --card:#121212;
+      --ink:#f5f5f5;
+      --muted:#a3a3a3;
+      --line:#2a2a2a;
+      --shadow:0 10px 30px rgba(0,0,0,.5);
+      --shadow-sm:0 2px 10px rgba(0,0,0,.4);
+    }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -37,28 +53,37 @@
     }
     a{color:inherit; text-decoration:none}
     img{max-width:100%; height:auto; display:block}
+    h1,h2,.brand .name{font-family:Oswald, Montserrat, system-ui, sans-serif}
 
     /* Header / Nav */
     .nav{
-      position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:50; background:var(--card); border-bottom:1px solid var(--line);
       box-shadow:var(--shadow-sm);
     }
     .nav .inner{max-width:var(--max); margin:auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:12px}
     .brand img{width:40px; height:40px; object-fit:contain; border-radius:50%; background:#fff; border:2px solid var(--black)}
-    .brand .name{font-family:Oswald, sans-serif; letter-spacing:.5px; font-weight:600; font-size:20px}
+    [data-theme="dark"] .brand img{background:#fff} /* keep logo bright in dark mode */
+    .brand .name{letter-spacing:.5px; font-weight:700; font-size:20px}
+    .nav .links{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
     .nav a.link{padding:8px 10px; border-radius:10px}
     .nav a.link:hover{background:var(--line)}
-    .nav .cta{display:flex; gap:10px}
     .btn{
       display:inline-block; padding:10px 14px; border:2px solid var(--black);
-      border-radius:12px; font-weight:700; transition:transform .05s ease, background .15s ease;
-      background:#fff; color:#000;
+      border-radius:12px; font-weight:800; transition:transform .05s ease, background .15s ease, color .15s ease, border-color .15s ease;
+      background:transparent; color:var(--ink);
     }
-    .btn:hover{background:var(--gold)}
+    .btn:hover{background:var(--gold); color:#000; border-color:#000}
     .btn:active{transform:translateY(1px)}
-    .btn.ghost{border-color:#d1d5db; color:#111; background:#fff}
-    .btn.ghost:hover{background:#f3f4f6}
+    .btn.ghost{border-color:#d1d5db}
+    [data-theme="dark"] .btn.ghost{border-color:#3a3a3a}
+
+    .theme-toggle{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:12px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer;
+      font-weight:700;
+    }
+    .theme-toggle:hover{background:var(--line)}
+    .theme-toggle .icon{font-size:18px; line-height:0}
 
     /* Wrapper */
     .wrap{max-width:var(--max); margin:auto; padding:22px}
@@ -67,174 +92,4 @@
     .hero{
       margin-top:18px; border-radius:var(--radius);
       background:
-        linear-gradient(120deg, rgba(255,215,0,.15), rgba(255,255,255,1) 60%),
-        #fff;
-      display:grid; gap:28px; align-items:center; padding:36px 24px; box-shadow:var(--shadow-sm);
-    }
-    @media (min-width:960px){ .hero{grid-template-columns:1.2fr .9fr} }
-    .title{display:flex; align-items:center; gap:16px}
-    .title img{width:64px; height:64px; object-fit:contain; border-radius:50%; background:#fff; border:2px solid var(--black)}
-    h1{margin:0; font-family:Oswald, sans-serif; font-size:clamp(30px,5vw,52px); line-height:1.05}
-    .sub{margin:6px 0 0 0; font-weight:600; color:#000}
-    .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{
-      border:1.5px solid #d1d5db; border-radius:999px; padding:6px 10px; background:#fff; font-weight:600;
-    }
-    .hero .actions{display:flex; gap:12px; margin-top:14px}
-    .hero-media{
-      border-radius:14px; overflow:hidden; background:#eee; border:1px solid var(--line);
-      aspect-ratio:16/9; display:grid; place-items:center; color:var(--muted);
-    }
-    .hero-media img{width:100%; height:100%; object-fit:cover}
-
-    /* Sections */
-    section{margin-top:28px}
-    .grid{display:grid; gap:18px}
-    .two{grid-template-columns:repeat(auto-fit, minmax(290px, 1fr))}
-    .cards{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr))}
-    .card{
-      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-      padding:18px; box-shadow:var(--shadow);
-    }
-    h2{margin:0 0 10px; font-size:22px; color:#000; font-weight:800}
-    .list{margin:8px 0 0; padding-left:18px}
-    .statrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-    .stat{
-      background:#fff; border:2px solid var(--black); color:#000; border-radius:12px; padding:8px 12px; font-weight:800;
-    }
-    .muted{color:var(--muted)}
-
-    /* Footer */
-    footer{margin:36px 0 10px; text-align:center; color:var(--muted)}
-
-    /* Focus (keyboard accessibility) */
-    :focus-visible{outline:3px solid var(--gold); outline-offset:2px}
-  </style>
-</head>
-<body>
-
-  <!-- Sticky Nav -->
-  <nav class="nav">
-    <div class="inner">
-      <a class="brand" href="#">
-        <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
-        <span class="name">Sophia Jodon</span>
-      </a>
-      <div class="cta">
-        <a class="link" href="#prs">PRs</a>
-        <a class="link" href="#highlights">Highlights</a>
-        <a class="link" href="#about">About</a>
-        <a class="btn" href="#contact">Coach Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <div class="wrap">
-
-    <!-- Hero -->
-    <header class="hero">
-      <div>
-        <div class="title">
-          <img src="/assets/tiger.png" alt="Cuyahoga Falls Tiger logo">
-          <h1>Sophia Jodon</h1>
-        </div>
-        <p class="sub">Class of 2028 • Cuyahoga Falls HS</p>
-        <div class="tags" aria-label="Events">
-          <span class="chip">Shot Put</span>
-          <span class="chip">Discus</span>
-          <span class="chip">Hammer Throw</span>
-          <span class="chip">Weight Throw</span>
-        </div>
-        <div class="actions">
-          <a class="btn" href="#highlights">View Highlights</a>
-          <a class="btn ghost" href="#schedule">Season Schedule</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <!-- Replace with /assets/hero.jpg when ready -->
-        <!-- <img src="/assets/hero.jpg" alt="Sophia Jodon in competition"> -->
-        <span>Hero Photo Placeholder</span>
-      </div>
-    </header>
-
-    <!-- PRs + Academics -->
-    <section id="prs" class="grid two">
-      <div class="card">
-        <h2>Personal Records (PRs)</h2>
-        <div class="statrow">
-          <span class="stat">Shot Put: 33 ft</span>
-          <span class="stat">Discus: 87 ft</span>
-        </div>
-        <ul class="list">
-          <li>Hammer Throw: <strong>—</strong></li>
-          <li>Weight Throw: <strong>—</strong></li>
-        </ul>
-        <p class="muted">Last updated: <span id="updated"></span></p>
-      </div>
-      <div class="card">
-        <h2>Academics</h2>
-        <ul class="list">
-          <li>National Honor Society</li>
-          <li>Intended Major: Education</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Highlights / Training / Schedule -->
-    <section id="highlights" class="grid cards">
-      <div class="card">
-        <h2>Meet Highlights</h2>
-        <p>Link videos or meet sheets (YouTube/Hudl/Google Drive).</p>
-        <div class="hero-media" style="aspect-ratio:16/9;">Video/Thumb Placeholder</div>
-      </div>
-      <div class="card">
-        <h2>Training</h2>
-        <p>Kettlebell/strength, throwing drills, and progress notes.</p>
-        <div class="hero-media" style="aspect-ratio:16/9;">Gym/Drill Photo</div>
-      </div>
-      <div class="card" id="schedule">
-        <h2>Schedule</h2>
-        <ul class="list">
-          <li>Fall conditioning —</li>
-          <li>Indoor meets —</li>
-          <li>Outdoor season —</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- About / References -->
-    <section id="about" class="grid two">
-      <div class="card">
-        <h2>About Sophia</h2>
-        <p>Multi-event thrower focused on Shot Put, Discus, Hammer, and Weight Throw. Add a short bio, goals, awards, and team role here.</p>
-      </div>
-      <div class="card">
-        <h2>Coach References</h2>
-        <ul class="list">
-          <li>Head Coach: — (email / phone)</li>
-          <li>Throws Coach: — (email / phone)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="grid two">
-      <div class="card">
-        <h2>Coach Contact</h2>
-        <p>Email: <a href="mailto:info@sophiajodon.com">info@sophiajodon.com</a></p>
-      </div>
-      <div class="card">
-        <h2>Download</h2>
-        <p><a href="#">Athlete one-sheet (PDF)</a> (optional)</p>
-      </div>
-    </section>
-
-    <footer>© <span id="y"></span> Sophia Jodon</footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('updated').textContent = new Date().toLocaleDateString();
-  </script>
-</body>
-</html>
+        linear-gradient(120deg, rgba(
